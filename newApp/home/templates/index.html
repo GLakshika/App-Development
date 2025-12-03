@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IF=edge" />
+        <meta name="viewport" content="width=device-width. initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            table{
+                border-collapse: collapse;
+                margin: 10px;
+            }
+            table,td,th{
+                border: 1px solid #222;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My New App</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident error architecto tempora doloribus, accusamus molestiae quisquam quidem, quam temporibus expedita ducimus cumque laboriosam iusto eligendi id at sunt dolor unde.</p>
+        {% comment "Notes" %}
+        {{users}}
+        {% endcomment %}
+        <table>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Eligible</th>
+            </tr>
+            {% for user in users %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.age}}</td>
+                    <td>
+                        {% if user.age >= 18 %}
+                        YES
+                        {% else %}
+                        NO 
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
